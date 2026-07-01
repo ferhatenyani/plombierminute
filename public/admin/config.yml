@@ -1,0 +1,168 @@
+# ------------------------------------------------------------------------------
+# Sveltia CMS configuration — PlombierMinute (single-page version)
+# ------------------------------------------------------------------------------
+# - All field labels and help text are in French (the client edits in French).
+# - The CMS chrome itself is currently English-only in Sveltia v0.x.
+# - Saving in /admin = a Git commit on `branch` below = Netlify rebuild.
+# ------------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: OWNER/plombierminute   # TODO: replace OWNER/plombierminute with the real GitHub repo
+  branch: main
+  # If using the recommended Cloudflare Worker auth (sveltia-cms-auth), uncomment:
+  # base_url: https://YOUR-WORKER.workers.dev
+  # auth_endpoint: auth
+
+publish_mode: simple
+
+media_folder: public/images
+public_folder: /images
+
+locale: fr
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ---------------------------------------------------------------------------
+  # Single — réglages du site (titre, téléphone, hero, SEO global)
+  # ---------------------------------------------------------------------------
+  - name: site_settings
+    label: "Réglages du site"
+    label_singular: "Réglage"
+    description: "Paramètres généraux : nom, téléphone, image principale, SEO global."
+    files:
+      - name: site
+        label: "Réglages généraux"
+        file: content/site.yml
+        format: yml
+        fields:
+          - { name: site_title,           label: "Nom du site",                            widget: string }
+          - { name: tagline,              label: "Slogan court",                           widget: string }
+          - { name: hero_heading,         label: "Titre principal (page d'accueil)",      widget: string }
+          - { name: hero_subtext,         label: "Sous-titre du hero",                     widget: text }
+          - { name: hero_image,           label: "Image principale du hero",               widget: image }
+          - { name: logo,                 label: "Logo (optionnel)",                       widget: image, required: false }
+          - { name: phone,                label: "Numéro de téléphone (cliquable)",        widget: string, hint: "Format international recommandé : +33 1 23 45 67 89" }
+          - { name: emergency_label,      label: "Étiquette urgence (ex : Urgence 24/7)",  widget: string }
+          - { name: cta_primary_label,    label: "Texte du bouton principal",              widget: string }
+          - { name: cta_secondary_label,  label: "Texte du bouton secondaire",             widget: string }
+          - { name: response_minutes,     label: "Délai d'intervention indicatif (minutes)", widget: string }
+          - { name: default_zone,         label: "Zone principale (utilisée dans le SEO)", widget: string }
+          - { name: site_url,             label: "URL du site (sans / final)",             widget: string, hint: "Ex : https://plombierminute.fr" }
+          - { name: seo_title,            label: "Titre SEO (balise <title>)",             widget: string }
+          - { name: seo_description,      label: "Description SEO (160 caractères max)",   widget: text }
+          - { name: seo_keywords,         label: "Mots-clés SEO (séparés par des virgules)", widget: string }
+
+  # ---------------------------------------------------------------------------
+  # Folder — Services / interventions
+  # ---------------------------------------------------------------------------
+  - name: services
+    label: "Services / interventions"
+    label_singular: "Service"
+    description: "Les types d'interventions que vous proposez. Réordonnez avec le champ « Ordre »."
+    folder: content/services
+    create: true
+    slug: "{{ordre}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: titre,       label: "Titre du service",      widget: string }
+      - { name: slug,        label: "Identifiant (URL)",     widget: string, hint: "Sans espace ni accent. Ex : fuite-eau" }
+      - { name: ordre,       label: "Ordre d'affichage",     widget: number, default: 10, value_type: int, min: 1 }
+      - { name: icone,       label: "Icône (optionnel)",     widget: select, required: false, options: ["drop","pipe","flame","toilet","shower","sink","bolt","clock","shield","award"] }
+      - { name: image,       label: "Image illustrative",    widget: image }
+      - { name: description, label: "Description courte",    widget: text, hint: "Affichée sur la carte du service." }
+      - { name: body,        label: "Texte détaillé",        widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  # Folder — Pourquoi nous choisir (avantages)
+  # ---------------------------------------------------------------------------
+  - name: avantages
+    label: "Pourquoi nous choisir"
+    label_singular: "Avantage"
+    description: "Les arguments de confiance (rapidité, disponibilité, garantie...)."
+    folder: content/avantages
+    create: true
+    slug: "{{ordre}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: titre, label: "Titre",            widget: string }
+      - { name: ordre, label: "Ordre d'affichage", widget: number, default: 10, value_type: int, min: 1 }
+      - { name: icone, label: "Icône",             widget: select, required: false, options: ["drop","pipe","flame","toilet","shower","sink","bolt","clock","shield","award"] }
+      - { name: image, label: "Image (optionnelle)", widget: image, required: false }
+      - { name: body,  label: "Texte",             widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  # Single — Zone d'intervention
+  # ---------------------------------------------------------------------------
+  - name: zone_settings
+    label: "Zone d'intervention"
+    files:
+      - name: zone
+        label: "Zone d'intervention"
+        file: content/zone.yml
+        format: yml
+        fields:
+          - { name: titre,             label: "Titre de la section",        widget: string }
+          - { name: intro,             label: "Texte d'introduction",       widget: text }
+          - { name: zone_image,        label: "Image de fond de la zone",   widget: image }
+          - name: zones_couvertes
+            label: "Communes desservies"
+            widget: list
+            summary: "{{fields.zone}}"
+            field: { name: zone, label: "Commune", widget: string }
+          - { name: delai_intervention, label: "Délai d'intervention indicatif", widget: string }
+          - { name: map_embed_url,      label: "URL d'iframe carte (Google Maps / OpenStreetMap)", widget: string, required: false }
+          - { name: note,               label: "Note interne (non publiée)",   widget: string, required: false }
+
+  # ---------------------------------------------------------------------------
+  # Single — Contact (adresse, téléphone, horaires)
+  # ---------------------------------------------------------------------------
+  - name: contact_settings
+    label: "Coordonnées de contact"
+    files:
+      - name: contact
+        label: "Coordonnées"
+        file: content/contact.yml
+        format: yml
+        fields:
+          - { name: adresse,         label: "Adresse postale",                    widget: string }
+          - { name: code_postal,     label: "Code postal",                        widget: string }
+          - { name: ville,           label: "Ville",                              widget: string }
+          - { name: telephone,       label: "Téléphone (cliquable)",              widget: string }
+          - { name: email,           label: "E-mail de contact",                  widget: string }
+          - { name: horaires,        label: "Horaires d'intervention",            widget: string }
+          - { name: horaires_bureau, label: "Horaires du standard",               widget: string }
+          - { name: intro,           label: "Texte d'introduction de la section", widget: text }
+          - { name: contact_image,   label: "Image de fond",                      widget: image }
+          - { name: map_embed_url,   label: "URL d'iframe carte (Google Maps)",   widget: string, required: false }
+          - { name: siret,           label: "SIRET (optionnel)",                  widget: string, required: false }
+
+  # ---------------------------------------------------------------------------
+  # Single — Mentions légales
+  # ---------------------------------------------------------------------------
+  - name: legal_settings
+    label: "Mentions légales"
+    files:
+      - name: mentions
+        label: "Mentions légales"
+        file: content/mentions-legales.md
+        format: frontmatter
+        fields:
+          - { name: titre,                  label: "Titre de la page",                widget: string }
+          - { name: editeur,                label: "Éditeur du site (raison sociale)", widget: string }
+          - { name: adresse_editeur,        label: "Adresse de l'éditeur",            widget: string }
+          - { name: responsable_publication, label: "Responsable de publication",     widget: string }
+          - { name: email_editeur,          label: "E-mail de l'éditeur",             widget: string }
+          - { name: telephone_editeur,      label: "Téléphone de l'éditeur",          widget: string }
+          - { name: hebergeur,              label: "Hébergeur",                       widget: string }
+          - { name: adresse_hebergeur,      label: "Adresse de l'hébergeur",          widget: string }
+          - { name: telephone_hebergeur,    label: "Téléphone de l'hébergeur",        widget: string }
+          - { name: seo_title,              label: "Titre SEO de la page",            widget: string }
+          - { name: seo_description,        label: "Description SEO de la page",      widget: text }
+          - { name: body,                   label: "Contenu (texte légal & RGPD)",    widget: markdown }
