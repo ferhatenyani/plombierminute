@@ -9,8 +9,7 @@ export function AvantagesSection({ avantages, site }: Props) {
     <section id="pourquoi" className="section bg-bg">
       <div className="container-pm">
         <header className="max-w-3xl">
-          <span className="eyebrow">Pourquoi nous choisir</span>
-          <h2 className="h-display mt-3 text-2xl sm:text-3xl md:text-4xl">
+          <h2 className="h-display text-2xl sm:text-3xl md:text-4xl">
             Une équipe locale, simple et transparente.
           </h2>
           <p className="mt-3 text-base leading-relaxed text-body sm:mt-4 sm:text-lg">

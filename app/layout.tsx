@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, Fraunces } from 'next/font/google';
+import { Bricolage_Grotesque } from 'next/font/google';
 import Script from 'next/script';
 import { getSite, getContact, getZone, telHref } from '@/lib/content';
 import { Header } from '@/components/Header';
@@ -7,16 +7,14 @@ import { Footer } from '@/components/Footer';
 import { EmergencyDock } from '@/components/EmergencyDock';
 import './globals.css';
 
-const sans = Plus_Jakarta_Sans({
+// Single family, variable weight. Bricolage Grotesque is a humanist
+// grotesque with mechanical warmth, distinctive character, and enough
+// range to carry both display and body without a second font.
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
-});
-
-const display = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-display',
+  axes: ['opsz'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -112,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="fr" className={`${sans.variable} ${display.variable}`}>
+    <html lang="fr" className={bricolage.variable}>
       <body className="min-h-dvh bg-bg text-body antialiased">
         <a
           href="#top"

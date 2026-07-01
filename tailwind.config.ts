@@ -18,7 +18,7 @@ const config: Config = {
         // text
         ink: '#0A2240',         // headings, max contrast
         body: '#2B3645',        // body text
-        muted: '#6B7A8C',       // captions, helper text
+        muted: '#5A6875',       // captions, helper text (WCAG AA on white)
         // brand
         brand: {
           50:  '#EAF1FA',
@@ -53,7 +53,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        // Display maps to the same family; weight + tracking carry the voice.
+        display: ['var(--font-sans)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       letterSpacing: {
         tightest: '-0.03em',

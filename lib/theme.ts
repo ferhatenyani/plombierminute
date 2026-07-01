@@ -6,7 +6,7 @@ export const palette = {
   surfaceMuted: '#EEF2F7',
   ink: '#0A2240',
   body: '#2B3645',
-  muted: '#6B7A8C',
+  muted: '#5A6875',
   brand: '#1357A6',
   brandDark: '#0E4380',
   urgent: '#D33B2C',

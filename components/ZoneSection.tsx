@@ -11,8 +11,7 @@ export function ZoneSection({ zone, contact }: Props) {
     <section id="zone" className="section bg-surface">
       <div className="container-pm grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
         <div>
-          <span className="eyebrow">Zone d'intervention</span>
-          <h2 className="h-display mt-3 text-2xl sm:text-3xl md:text-4xl">
+          <h2 className="h-display text-2xl sm:text-3xl md:text-4xl">
             {zone.titre}
           </h2>
           <p className="mt-3 max-w-prose text-base leading-relaxed text-body sm:mt-4 sm:text-lg">

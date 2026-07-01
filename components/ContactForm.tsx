@@ -100,8 +100,8 @@ export function ContactForm() {
           required
         >
           <option value="" disabled>Choisir un sujet…</option>
-          <option value="Urgence — fuite d'eau">Urgence — fuite d'eau</option>
-          <option value="Urgence — débouchage">Urgence — débouchage</option>
+          <option value="Urgence : fuite d'eau">Urgence : fuite d'eau</option>
+          <option value="Urgence : débouchage">Urgence : débouchage</option>
           <option value="Panne de chauffe-eau">Panne de chauffe-eau</option>
           <option value="Devis pour installation">Devis pour installation</option>
           <option value="Autre demande">Autre demande</option>
@@ -147,7 +147,7 @@ export function ContactForm() {
             className="inline-flex items-center gap-2 rounded-md bg-success-500/10 px-3 py-2 text-sm text-success-600"
           >
             <Icon name="check" className="h-4 w-4" />
-            Message envoyé — nous vous recontactons sous 15 minutes.
+            Message envoyé. Nous vous recontactons sous 15 minutes.
           </span>
         )}
         {status === 'error' && (

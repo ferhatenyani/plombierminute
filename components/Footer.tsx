@@ -95,7 +95,7 @@ export function Footer({ site, contact, zone }: Props) {
       <div className="border-t border-border">
         <div className="container-pm flex flex-col items-start justify-between gap-2 py-4 text-xs text-muted sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} {site.site_title}. Tous droits réservés.</span>
-          <span>Crédits photos : Unsplash & Pexels — Hébergé par Netlify.</span>
+          <span>Crédits photos : Unsplash & Pexels · Hébergé par Netlify.</span>
         </div>
       </div>
     </footer>

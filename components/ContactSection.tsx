@@ -11,8 +11,7 @@ export function ContactSection({ contact, site }: Props) {
     <section id="contact" className="section bg-bg overflow-hidden">
       <div className="container-pm grid gap-8 lg:grid-cols-12 lg:gap-12">
         <div className="min-w-0 lg:col-span-5">
-          <span className="eyebrow">Contact</span>
-          <h2 className="h-display mt-3 text-2xl sm:text-3xl md:text-4xl">
+          <h2 className="h-display text-2xl sm:text-3xl md:text-4xl">
             Une urgence ? Un projet ? Parlons-en.
           </h2>
           <p className="mt-3 max-w-prose text-base leading-relaxed text-body sm:mt-4 sm:text-lg">
@@ -84,7 +83,7 @@ function ContactRow({
         <Icon name={icon} className="h-4 w-4" />
       </span>
       <span className="flex min-w-0 flex-col">
-        <span className="text-[0.7rem] uppercase tracking-wider text-muted sm:text-xs">{label}</span>
+        <span className="text-xs uppercase tracking-wider text-muted">{label}</span>
         <span className="text-sm font-medium text-ink break-words">{value}</span>
       </span>
     </>

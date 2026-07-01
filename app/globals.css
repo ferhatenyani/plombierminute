@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
+  /* One family, carried by variable weight + optical size. */
+  --font-sans: 'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color-scheme: light;
 }
 
@@ -13,6 +13,8 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-optical-sizing: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -42,24 +44,28 @@ code, kbd, samp, pre {
 }
 
 /* ---------------- Typography helpers ---------------- */
-.font-display { font-family: var(--font-display); font-weight: 600; }
+/* `.font-display` and `.h-display` both use the same family; the display
+   voice is carried by weight (700), tighter tracking, and tighter leading.
+   No second family — the humanist grotesque handles both roles. */
+.font-display { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.01em; }
 
 .h-display {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
   color: #0A2240;
   text-wrap: balance;
 }
 
+/* Label kicker for side panels and footer only. Not a section eyebrow. */
 .eyebrow {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   font-weight: 600;
-  color: #1357A6;
+  color: #5A6875;
 }
 
 /* Anchor-scroll offset for sticky header */
@@ -112,14 +118,6 @@ code, kbd, samp, pre {
 }
 .btn-outline:hover { border-color: #1357A6; color: #1357A6; }
 
-.btn-ghost-light {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  border-color: rgba(255,255,255,0.4);
-  backdrop-filter: blur(4px);
-}
-.btn-ghost-light:hover { background: rgba(255,255,255,0.20); }
-
 /* ---------------- Pulse dot (urgency, restrained) ---------------- */
 .pulse-dot {
   position: relative;
@@ -157,7 +155,7 @@ code, kbd, samp, pre {
   line-height: 1.4;
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
-.field::placeholder { color: #98A4B5; }
+.field::placeholder { color: #5A6A7A; }
 .field:focus {
   outline: none;
   border-color: #1357A6;
@@ -195,7 +193,7 @@ textarea.field { min-height: 6rem; }
 }
 .field-select:invalid,
 .field-select option[value=""] {
-  color: #98A4B5;
+  color: #5A6A7A;
 }
 /* Firefox: hide the built-in dotted focus ring on select */
 .field-select:-moz-focusring {

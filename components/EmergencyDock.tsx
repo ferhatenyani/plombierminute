@@ -11,7 +11,7 @@ export function EmergencyDock({ phoneHref, phoneLabel }: Props) {
     <a
       href={phoneHref}
       className="btn btn-urgent fixed bottom-4 right-4 z-30 px-4 text-sm shadow-cardHover lg:hidden"
-      aria-label={`Appeler le ${phoneLabel} — urgence plomberie`}
+      aria-label={`Appeler le ${phoneLabel} pour une urgence plomberie`}
       data-emergency-call
     >
       <span className="pulse-dot" aria-hidden />
