@@ -4,7 +4,7 @@ slug: "chauffe-eau"
 icone: "flame"
 image: "/images/service-chauffe-eau.jpg"
 ordre: 3
-description: "Plus d'eau chaude ? Dépannage et remplacement de chauffe-eau électrique."
+description: "Eau chaude rétablie, souvent dans la journée."
 ---
 
 Panne d'eau chaude, ballon qui fuit, résistance HS ? On diagnostique

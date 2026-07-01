@@ -4,7 +4,7 @@ slug: "salle-de-bain"
 icone: "shower"
 image: "/images/service-salle-de-bain.jpg"
 ordre: 5
-description: "Remplacement de robinetterie, mitigeur, joints, siphon ou petite installation."
+description: "Mitigeur, joints, siphon : remis à neuf, sans dégât."
 ---
 
 Fuite de mitigeur, siphon qui coule, joints à refaire autour de la

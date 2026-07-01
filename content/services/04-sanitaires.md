@@ -4,7 +4,7 @@ slug: "sanitaires"
 icone: "toilet"
 image: "/images/service-sanitaires.jpg"
 ordre: 4
-description: "Réparation ou remplacement de WC, lavabos, robinetterie et mécanismes de chasse."
+description: "WC, chasse, robinet : réparés ou remplacés."
 ---
 
 WC qui coule en permanence, chasse d'eau cassée, robinet qui goutte ?

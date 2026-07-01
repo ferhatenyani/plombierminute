@@ -4,7 +4,7 @@ slug: "fuite-eau"
 icone: "drop"
 image: "/images/service-fuite-eau.jpg"
 ordre: 1
-description: "Recherche et réparation de fuites — évier, WC, canalisation apparente ou robinetterie."
+description: "On stoppe la fuite avant qu'elle ne coûte cher."
 ---
 
 Une fuite, même minime, peut vite provoquer des dégâts. On identifie

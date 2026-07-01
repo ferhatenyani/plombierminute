@@ -26,6 +26,10 @@ html, body {
   color: #2B3645;
   font-family: var(--font-sans);
   min-height: 100vh;
+  /* Safety net: any accidental overflow gets clipped instead of
+     leaking into a horizontal viewport scroll. `clip` (not `hidden`)
+     preserves `position: sticky` on the header. */
+  overflow-x: clip;
 }
 
 /* Enforce the two-font pair on every element so browser defaults

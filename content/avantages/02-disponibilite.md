@@ -5,6 +5,4 @@ image: "/images/trust-disponibilite.jpg"
 ordre: 2
 ---
 
-Une urgence ne prévient pas. Notre ligne est ouverte **jour et nuit,
-week-ends et jours fériés**, sans surcoût caché sur les créneaux
-inhabituels.
+Ligne ouverte jour et nuit, week-ends compris, sans surcoût caché.

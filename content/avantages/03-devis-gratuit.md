@@ -5,6 +5,4 @@ image: "/images/trust-devis-gratuit.jpg"
 ordre: 3
 ---
 
-Le diagnostic est gratuit. Le prix est **annoncé et validé ensemble
-avant** toute intervention — vous savez exactement combien vous allez
-payer, sans surprise sur la facture.
+Diagnostic gratuit, prix validé avec vous avant qu'on démarre. Zéro surprise à la facture.

@@ -8,9 +8,9 @@ type Props = { contact: Contact; site: Site };
 export function ContactSection({ contact, site }: Props) {
   const phoneHref = telHref(contact.telephone);
   return (
-    <section id="contact" className="section bg-bg">
+    <section id="contact" className="section bg-bg overflow-hidden">
       <div className="container-pm grid gap-8 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-5">
+        <div className="min-w-0 lg:col-span-5">
           <span className="eyebrow">Contact</span>
           <h2 className="h-display mt-3 text-2xl sm:text-3xl md:text-4xl">
             Une urgence ? Un projet ? Parlons-en.
@@ -25,7 +25,8 @@ export function ContactSection({ contact, site }: Props) {
             data-emergency-call
           >
             <Icon name="phone" className="h-5 w-5" />
-            {site.cta_primary_label} · {contact.telephone}
+            {site.cta_primary_label}
+            <span className="hidden sm:inline">· {contact.telephone}</span>
           </a>
 
           <ul className="mt-6 grid gap-2 sm:mt-8 sm:gap-3">
@@ -44,18 +45,18 @@ export function ContactSection({ contact, site }: Props) {
             <ContactRow
               icon="map-pin"
               label="Adresse"
-              value={`${contact.adresse} — ${contact.code_postal} ${contact.ville}`}
+              value={`${contact.adresse}, ${contact.code_postal} ${contact.ville}`}
             />
             <ContactRow icon="clock" label="Horaires" value={contact.horaires} />
           </ul>
         </div>
 
-        <div className="rounded-xl2 border border-border bg-surface p-4 shadow-card sm:p-6 lg:col-span-7">
+        <div className="min-w-0 rounded-xl2 border border-border bg-surface p-4 shadow-card sm:p-6 lg:col-span-7">
           <h3 className="font-display text-lg font-semibold text-ink sm:text-2xl">
             Formulaire de contact
           </h3>
           <p className="mt-1 text-sm text-muted">
-            Réponse sous 15 minutes en journée — pour une urgence, appelez directement.
+            Réponse sous 15 minutes en journée. Pour une urgence, appelez directement.
           </p>
           <div className="mt-4 sm:mt-5">
             <ContactForm />
