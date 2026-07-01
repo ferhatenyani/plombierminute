@@ -10,7 +10,7 @@ zero servers and zero recurring infrastructure cost.
 - **Hosting**: Netlify (free tier)
 - **CMS**: [Sveltia CMS](https://github.com/sveltia/sveltia-cms) served at `/admin`
 - **Content storage**: YAML + Markdown files in `/content`, committed to this Git repo
-- **Contact form**: Netlify Forms (free, no signup)
+- **Contact form**: [Web3Forms](https://web3forms.com) (free tier: 250 emails/month, no signup for the visitor)
 - **Structure**: one scrollable page (Hero → Services → Pourquoi nous → Zone → Contact), plus a separate `/mentions-legales/` page linked in the footer.
 - **No database, no API, no server runtime.**
 
@@ -148,24 +148,25 @@ detects the push and rebuilds the site (~30 s deploy).
 
 ---
 
-## Netlify Forms — receive contact submissions
+## Contact form — Web3Forms
 
-The contact form (`/contact`) uses [Netlify Forms](https://docs.netlify.com/forms/setup/).
-Two pieces make this work:
+The contact form uses [Web3Forms](https://web3forms.com). Netlify's free plan
+no longer includes email notifications, so we send submissions directly to
+Web3Forms from the visitor's browser and Web3Forms emails a copy to the
+client.
 
-1. **`/public/__forms.html`** — a hidden static HTML form Netlify's build bot
-   detects at deploy time. Field `name=` attributes match the React form one-for-one.
-2. **`components/ContactForm.tsx`** — the visible React form. Submission goes
-   through `lib/submitContact.ts`, which POSTs URL-encoded data to `/` with a
-   `form-name=contact` field. Honeypot (`bot-field`) is wired.
+- All submission logic lives in **[`lib/submitContact.ts`](./lib/submitContact.ts)** — a single file with a `(data: FormData) => Promise<void>` signature. Swap providers by editing that file only.
+- The **access key** is a constant at the top of `lib/submitContact.ts`. Web3Forms access keys are designed to be client-side visible (they identify the destination, not authenticate you) — you can rotate one at any time from the Web3Forms dashboard.
+- The React form ([`components/ContactForm.tsx`](./components/ContactForm.tsx)) uses a hidden `botcheck` checkbox as a honeypot; if a bot fills it, the form silently drops the payload.
 
-**Set the notification email**:
-Netlify → site → **Forms** → click the `contact` form → **Settings & usage** →
-**Form notifications** → add the client's email. You can also configure Slack
-or webhook notifications from the same page.
+**To change the destination email**: log in to [web3forms.com](https://web3forms.com),
+rotate the access key or update the target email in the dashboard. If you
+generate a new key, paste it into `WEB3FORMS_ACCESS_KEY` in
+[`lib/submitContact.ts`](./lib/submitContact.ts) and redeploy.
 
-Spam protection: honeypot is built in. If spam becomes an issue, enable
-Netlify's reCAPTCHA in the same Form settings panel.
+**Free-tier limits**: 250 form submissions per month. Beyond that, either
+upgrade Web3Forms (paid plan) or swap `submitContact` to Formspree, EmailJS,
+or your own SMTP relay — the rest of the app doesn't need to change.
 
 ---
 

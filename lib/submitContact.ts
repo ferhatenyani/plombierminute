@@ -1,29 +1,43 @@
 // Single module responsible for shipping a contact-form payload.
-// Default: Netlify Forms (no signup, free, works with static export).
-// To swap providers (Web3Forms / Formspree / Resend / etc.), replace
-// the body of `submitContact` — keep the (data: FormData) => Promise<void>
-// signature so the React form does not change.
+// Provider: Web3Forms (https://web3forms.com) — free tier, 250 emails/mo,
+// no signup for the visitor, no server code. To swap providers later
+// (Formspree / EmailJS / Resend / SMTP relay), replace the body of
+// `submitContact` and keep the (data: FormData) => Promise<void> signature.
+//
+// The access key below identifies the destination email. To rotate it,
+// change this single constant and redeploy. Web3Forms access keys are
+// designed to be public (client-side visible) and can be revoked from
+// the Web3Forms dashboard at any time.
+
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_ACCESS_KEY = 'f5e06d69-bdf8-4447-b2b5-0a6259723337';
 
 export async function submitContact(data: FormData): Promise<void> {
-  // Netlify Forms expects URL-encoded body POSTed to any page on the same
-  // domain. The hidden static form at /public/__forms.html (form name="contact")
-  // is what Netlify detects at build time.
-  const params = new URLSearchParams();
-  data.forEach((v, k) => {
-    params.append(k, typeof v === 'string' ? v : v.name);
-  });
-  // Ensure the form-name is present even if the React form omits it.
-  if (!params.has('form-name')) params.set('form-name', 'contact');
+  // Ensure the access key + a subject line are on the payload.
+  const payload = new FormData();
+  data.forEach((v, k) => payload.append(k, typeof v === 'string' ? v : v.name));
+  payload.set('access_key', WEB3FORMS_ACCESS_KEY);
+  if (!payload.get('subject')) {
+    const objet = payload.get('objet');
+    payload.set(
+      'subject',
+      objet ? `Nouvelle demande — ${objet}` : 'Nouvelle demande — PlombierMinute',
+    );
+  }
+  payload.set('from_name', 'Formulaire PlombierMinute');
 
-  const res = await fetch('/', {
+  const res = await fetch(WEB3FORMS_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString(),
+    body: payload,
   });
 
-  if (!res.ok) {
+  let json: { success?: boolean; message?: string } = {};
+  try { json = await res.json(); } catch { /* not JSON — fall through */ }
+
+  if (!res.ok || json.success === false) {
     throw new Error(
-      `Échec de l'envoi (code ${res.status}). Vérifiez votre connexion ou appelez-nous directement.`,
+      json.message ??
+        `Échec de l'envoi (code ${res.status}). Vérifiez votre connexion ou appelez-nous directement.`,
     );
   }
 }

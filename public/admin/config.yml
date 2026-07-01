@@ -8,7 +8,7 @@
 
 backend:
   name: github
-  repo: OWNER/plombierminute   # TODO: replace OWNER/plombierminute with the real GitHub repo
+  repo: ferhatenyani/plombierminute   # TODO: replace OWNER/plombierminute with the real GitHub repo
   branch: main
   # If using the recommended Cloudflare Worker auth (sveltia-cms-auth), uncomment:
   # base_url: https://YOUR-WORKER.workers.dev

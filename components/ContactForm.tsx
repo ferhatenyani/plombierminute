@@ -18,8 +18,9 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // honeypot — if filled, silently accept and drop
-    if (typeof data.get('bot-field') === 'string' && (data.get('bot-field') as string).length > 0) {
+    // Honeypot — Web3Forms convention is `botcheck`. If filled, silently
+    // succeed and drop the payload so the bot can't tell it was caught.
+    if (typeof data.get('botcheck') === 'string' && (data.get('botcheck') as string).length > 0) {
       setStatus('success');
       form.reset();
       return;
@@ -40,29 +41,23 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={onSubmit}
-      className="grid gap-4"
-      noValidate
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
-        <label>
-          Ne pas remplir :
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
-        </label>
-      </p>
+    <form onSubmit={onSubmit} className="grid gap-4" noValidate>
+      {/* Web3Forms honeypot — must stay hidden from real users */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-medium text-ink">Nom et prénom *</span>
           <input
             required
-            name="nom"
+            name="name"
             type="text"
             autoComplete="name"
             className="field mt-2"
@@ -105,11 +100,11 @@ export function ContactForm() {
           required
         >
           <option value="" disabled>Choisir un sujet…</option>
-          <option value="fuite">Urgence — fuite d'eau</option>
-          <option value="debouchage">Urgence — débouchage</option>
-          <option value="chauffe-eau">Panne de chauffe-eau</option>
-          <option value="devis">Devis pour installation</option>
-          <option value="autre">Autre demande</option>
+          <option value="Urgence — fuite d'eau">Urgence — fuite d'eau</option>
+          <option value="Urgence — débouchage">Urgence — débouchage</option>
+          <option value="Panne de chauffe-eau">Panne de chauffe-eau</option>
+          <option value="Devis pour installation">Devis pour installation</option>
+          <option value="Autre demande">Autre demande</option>
         </select>
       </label>
 
