@@ -118,7 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="fr" className={bricolage.variable}>
-      <body className="min-h-dvh bg-bg text-body antialiased">
+      <body className="min-h-dvh bg-bg text-body antialiased" suppressHydrationWarning>
         <a
           href="#top"
           className="sr-only-clip focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-ink focus:shadow-cardHover"

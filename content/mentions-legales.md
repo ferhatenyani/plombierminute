@@ -1,27 +1,37 @@
 ---
-titre: "Mentions légales"
-editeur: "[À REMPLIR : Nom de la société / EI / EIRL — Forme juridique — Capital social — SIRET — RCS]"
-adresse_editeur: "[À REMPLIR : adresse postale du siège social]"
-responsable_publication: "[À REMPLIR : Nom du responsable de publication]"
-email_editeur: "[À REMPLIR : email de contact]"
-telephone_editeur: "[À REMPLIR : numéro de téléphone]"
+titre: "Mentions légales & RGPD"
+editeur: "BTP France — [À FOURNIR : forme juridique + capital social]"
+adresse_editeur: "86 avenue de la République, 75011 Paris"
+responsable_publication: "[À FOURNIR : Nom du responsable de publication]"
+email_editeur: ""
+telephone_editeur: "07 45 95 85 24"
+siret: "[À FOURNIR : n° SIRET à 14 chiffres]"
+rcs: "[À FOURNIR : RCS ou RM — ville d'immatriculation]"
+tva: "[À FOURNIR : n° de TVA intracommunautaire, si applicable]"
+assurance: "[À FOURNIR : nom de l'assureur RC pro / décennale + n° de police + zone couverte]"
 hebergeur: "Netlify, Inc."
 adresse_hebergeur: "44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis"
 telephone_hebergeur: "+1 415 691 2537"
-seo_title: "Mentions légales — BTP France"
-seo_description: "Mentions légales du site BTP France : éditeur, hébergeur, et politique de traitement des données personnelles (RGPD)."
+seo_title: "Mentions légales & RGPD — BTP France"
+seo_description: "Mentions légales du site BTP France : éditeur, hébergeur, assurance professionnelle et politique de traitement des données personnelles (RGPD)."
 ---
 
 ## Éditeur du site
 
-Le présent site est édité par **[À REMPLIR : Nom de la société]**,
-dont le siège social est situé à **[À REMPLIR : adresse]**, immatriculée
-sous le numéro SIRET **[À REMPLIR : SIRET]**.
+Le présent site est édité par **BTP France**, [À FOURNIR :
+forme juridique — EI / EURL / SARL / SAS / auto-entrepreneur], dont
+le siège social est situé au **86 avenue de la République, 75011
+Paris**.
+
+- **SIRET :** [À FOURNIR : 14 chiffres]
+- **Immatriculation :** [À FOURNIR : RCS Paris n° … OU Répertoire des Métiers de Paris n° …]
+- **TVA intracommunautaire :** [À FOURNIR : FR… si applicable]
+- **Téléphone :** 07 45 95 85 24
 
 ## Responsable de la publication
 
-**[À REMPLIR : Nom du responsable de publication]** — joignable via le
-[formulaire de contact](/#contact) ou par téléphone.
+**[À FOURNIR : Nom du responsable de publication]** — joignable
+via le [formulaire de contact](/#contact) ou au 07 45 95 85 24.
 
 ## Hébergement
 
@@ -29,68 +39,125 @@ Le site est hébergé par **Netlify, Inc.**, 44 Montgomery Street,
 Suite 300, San Francisco, CA 94104, États-Unis — téléphone
 +1 415 691 2537 — site web `https://www.netlify.com`.
 
+## Assurance professionnelle
+
+Conformément aux articles L241-1 et suivants du Code des assurances,
+BTP France est couvert par une **assurance responsabilité civile
+professionnelle** et une **garantie décennale** souscrites auprès
+de **[À FOURNIR : nom de l'assureur]** — police
+n° **[À FOURNIR : numéro de police]** — pour une zone d'activité
+couvrant **la France métropolitaine** (ou zone plus restreinte, à
+confirmer).
+
 ## Propriété intellectuelle
 
-L'ensemble du contenu du site (textes, images, logos, charte graphique,
-mise en page) est protégé par le droit d'auteur. Toute reproduction,
-représentation ou diffusion, totale ou partielle, sans autorisation
-préalable écrite de l'éditeur, est strictement interdite.
+L'ensemble du contenu du site (textes, images, logos, charte
+graphique, mise en page) est protégé par le droit d'auteur. Toute
+reproduction, représentation ou diffusion, totale ou partielle,
+sans autorisation préalable écrite de l'éditeur, est strictement
+interdite.
 
-Les photographies utilisées proviennent de banques d'images libres de
-droits (Unsplash, Pexels) sous licences permettant un usage commercial.
+Les photographies utilisées proviennent de banques d'images libres
+de droits (Unsplash, Pexels) sous licences permettant un usage
+commercial. L'icône du site (favicon) est fournie par Icons8.
 
-## Crédits photographiques
+## Crédits
 
-Crédits photos : photographes contributeurs sur Unsplash et Pexels.
-La liste complète et les liens vers les sources originales figurent
-dans le fichier `README.md` du dépôt du site.
+- **Photographies :** contributeurs Unsplash et Pexels ;
+- **Icône du site :** Icons8 (`https://icons8.com`) ;
+- **Formulaire de contact :** service Web3Forms (`https://web3forms.com`).
 
 ## Données personnelles & RGPD
+
+Le responsable de traitement est **BTP France**, joignable via le
+formulaire de contact ou au 07 45 95 85 24.
 
 ### Données collectées via le formulaire de contact
 
 Lorsque vous utilisez notre formulaire de contact, nous collectons
-uniquement les informations strictement nécessaires au traitement de
-votre demande :
+uniquement les informations strictement nécessaires au traitement
+de votre demande :
 
-- **Nom**, pour vous identifier ;
+- **Nom et prénom**, pour vous identifier ;
 - **Numéro de téléphone**, pour vous recontacter ;
+- **Objet de votre demande**, pour orienter la réponse ;
 - **Contenu de votre message**, pour comprendre votre besoin.
 
-### Finalité
+Aucune donnée sensible (santé, opinions, etc.) n'est demandée.
 
-Ces données sont utilisées **uniquement** pour répondre à votre demande
-de devis ou d'intervention. Elles ne font l'objet d'**aucune
-commercialisation** et ne sont **transmises à aucun tiers**, hormis
-notre prestataire d'hébergement (Netlify), strictement à des fins
-techniques de transport du message.
+### Finalité et base légale
+
+Ces données sont utilisées **uniquement** pour répondre à votre
+demande de devis ou d'intervention. Le traitement repose sur :
+
+- votre **consentement libre et éclairé** exprimé en soumettant
+  le formulaire (RGPD, art. 6.1.a) ;
+- l'**exécution de mesures pré-contractuelles** prises à votre
+  demande, telles que l'établissement d'un devis (RGPD, art. 6.1.b).
+
+### Destinataires et sous-traitants
+
+Vos données sont transmises aux destinataires suivants :
+
+- **BTP France** — destinataire final, pour traiter votre demande ;
+- **Web3Forms** (Kirankumar Balakrishnan, États-Unis), qui achemine
+  techniquement votre message depuis votre navigateur jusqu'à notre
+  boîte de réception. Le transfert hors Union européenne est encadré
+  par les **clauses contractuelles types** de la Commission
+  européenne. Politique : `https://web3forms.com/privacy` ;
+- **Netlify, Inc.** (États-Unis), prestataire d'hébergement du site.
+
+Aucune donnée n'est **vendue, cédée ou communiquée à des tiers**
+à des fins commerciales.
 
 ### Durée de conservation
 
-Les messages reçus via le formulaire sont conservés pendant une durée
-maximale de **3 ans** à compter du dernier contact, après quoi ils
-sont supprimés.
+- **3 ans** à compter du dernier contact pour les demandes n'ayant
+  pas abouti à une intervention ;
+- **10 ans** pour les données liées à une intervention effectuée
+  (obligations comptables et de garantie décennale).
+
+Au-delà, les données sont supprimées ou archivées de manière
+sécurisée.
 
 ### Vos droits
 
-Conformément au Règlement Général sur la Protection des Données (RGPD)
-et à la loi « Informatique et Libertés », vous disposez d'un droit
-d'**accès, de rectification, d'opposition, de limitation et de
-suppression** de vos données. Pour exercer ces droits, contactez-nous
-via notre [formulaire de contact](/#contact) ou par téléphone en
-précisant l'objet « RGPD » et en joignant un justificatif d'identité.
+Conformément aux articles 15 à 22 du RGPD et à la loi
+« Informatique et Libertés », vous disposez des droits suivants :
 
-Vous disposez également du droit d'introduire une réclamation auprès
-de la **CNIL** (`www.cnil.fr`).
+- **Droit d'accès** (art. 15) ;
+- **Droit de rectification** (art. 16) ;
+- **Droit à l'effacement** (art. 17) ;
+- **Droit à la limitation du traitement** (art. 18) ;
+- **Droit à la portabilité** (art. 20) ;
+- **Droit d'opposition** (art. 21).
 
-### Cookies
+Pour exercer ces droits, contactez-nous via notre
+[formulaire de contact](/#contact) ou par téléphone au
+07 45 95 85 24, en précisant l'objet « RGPD » et en joignant un
+justificatif d'identité. Nous vous répondons dans un délai maximal
+d'**un mois**.
 
-Ce site n'utilise **aucun cookie de suivi publicitaire** ni de pistage
-tiers. Seuls des cookies techniques strictement nécessaires au bon
-fonctionnement du site peuvent être déposés.
+Vous disposez également du droit d'introduire une réclamation
+auprès de la **CNIL** — 3 place de Fontenoy, 75007 Paris —
+`www.cnil.fr`.
+
+### Sécurité
+
+Le site est diffusé exclusivement en **HTTPS** (chiffrement TLS).
+Les échanges avec le formulaire de contact sont chiffrés de bout
+en bout jusqu'à Web3Forms.
+
+### Cookies et traceurs
+
+Ce site n'utilise **aucun cookie de suivi publicitaire, analytique
+ou de pistage tiers**. Seuls des cookies techniques strictement
+nécessaires au bon fonctionnement du site peuvent être déposés.
+Aucun consentement préalable n'est requis pour ces cookies
+techniques (délibération CNIL n° 2020-091, art. 82 LIL).
 
 ## Loi applicable
 
-Le présent site, ainsi que les présentes mentions légales, sont régis
-par le droit français. En cas de litige, les tribunaux français
-seront seuls compétents.
+Le présent site, ainsi que les présentes mentions légales, sont
+régis par le droit français. En cas de litige, les tribunaux
+français seront seuls compétents.

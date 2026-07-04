@@ -38,25 +38,46 @@ export function ZoneSection({ zone, contact }: Props) {
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-bg p-4 sm:p-5">
-          <h3 className="eyebrow">Communes desservies</h3>
-          <ul className="mt-3 flex flex-wrap gap-1.5 sm:mt-4">
-            {zone.zones_couvertes.map((z) => (
-              <li
-                key={z}
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2 py-1 text-xs text-body sm:px-2.5 sm:py-1.5 sm:text-sm"
-              >
-                <Icon name="map-pin" className="h-3 w-3 text-brand-500 sm:h-3.5 sm:w-3.5" />
-                {z}
-              </li>
-            ))}
+        <div className="rounded-xl2 border border-border bg-bg p-5 sm:p-6">
+          <div className="flex items-baseline justify-between gap-3">
+            <h3 className="eyebrow">Communes desservies</h3>
+            <span className="text-xs font-semibold text-muted">
+              {zone.zones_couvertes.length} zones
+            </span>
+          </div>
+
+          <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5">
+            {zone.zones_couvertes.map((z, i) => {
+              const featured = i === 0;
+              return (
+                <li key={z}>
+                  <span
+                    className={
+                      featured
+                        ? 'inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 text-sm font-semibold text-white shadow-card'
+                        : 'inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-medium text-ink transition hover:border-brand-300 hover:bg-brand-50'
+                    }
+                  >
+                    <Icon
+                      name="map-pin"
+                      className={featured ? 'h-3.5 w-3.5' : 'h-3.5 w-3.5 text-brand-500'}
+                    />
+                    {z}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
-          <p className="mt-3 text-xs text-muted">
-            Vous ne voyez pas votre commune&nbsp;? Appelez-nous, on couvre souvent au-delà de cette liste.
+
+          <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-muted sm:text-sm">
+            <Icon name="phone" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-500" aria-hidden />
+            <span>
+              Vous ne voyez pas votre commune&nbsp;? Appelez-nous — on couvre souvent au-delà.
+            </span>
           </p>
 
           {zone.map_embed_url ? (
-            <div className="mt-4 overflow-hidden rounded-lg border border-border">
+            <div className="mt-5 overflow-hidden rounded-lg border border-border">
               <iframe
                 src={zone.map_embed_url}
                 className="aspect-[4/3] w-full"

@@ -28,7 +28,7 @@ export function ContactSection({ contact, site }: Props) {
             <span className="hidden sm:inline">· {contact.telephone}</span>
           </a>
 
-          <ul className="mt-6 grid gap-2 sm:mt-8 sm:gap-3">
+          <ul className="mt-6 grid gap-2.5 sm:mt-8 sm:gap-3">
             <ContactRow
               icon="phone"
               label="Téléphone"
@@ -42,16 +42,37 @@ export function ContactSection({ contact, site }: Props) {
             />
             <ContactRow icon="clock" label="Horaires" value={contact.horaires} />
           </ul>
+
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs uppercase tracking-[0.14em] text-muted sm:mt-6">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="pulse-dot" aria-hidden />
+              <span className="font-semibold text-ink">Disponible maintenant</span>
+            </span>
+            <span aria-hidden className="hidden h-1 w-1 rounded-full bg-border-strong sm:inline-block" />
+            <span>Devis clair avant travaux</span>
+          </div>
         </div>
 
-        <div className="min-w-0 rounded-xl2 border border-border bg-surface p-4 shadow-card sm:p-6 lg:col-span-7">
-          <h3 className="font-display text-lg font-semibold text-ink sm:text-2xl">
-            Formulaire de contact
-          </h3>
-          <p className="mt-1 text-sm text-muted">
-            Réponse rapide en journée. Pour une urgence, appelez directement.
-          </p>
-          <div className="mt-4 sm:mt-5">
+        <div className="min-w-0 rounded-xl2 border border-border bg-surface p-5 shadow-card sm:p-7 lg:col-span-7">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h3 className="font-display text-lg font-semibold text-ink sm:text-2xl">
+                Formulaire de contact
+              </h3>
+              <p className="mt-1 text-sm text-muted">
+                Réponse rapide en journée. Pour une urgence, appelez directement.
+              </p>
+            </div>
+            <a
+              href={phoneHref}
+              className="hidden items-center gap-1.5 rounded-full border border-border bg-bg px-3 py-1.5 text-xs font-semibold text-brand-700 transition hover:border-brand-300 hover:text-brand-600 sm:inline-flex"
+              data-emergency-call
+            >
+              <Icon name="phone" className="h-3.5 w-3.5" />
+              {contact.telephone}
+            </a>
+          </div>
+          <div className="mt-5 sm:mt-6">
             <ContactForm />
           </div>
         </div>

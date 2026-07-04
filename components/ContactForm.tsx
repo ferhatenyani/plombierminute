@@ -92,17 +92,21 @@ export function ContactForm() {
         <textarea
           required
           name="message"
-          rows={5}
+          rows={6}
           className="field mt-2 resize-y"
           placeholder="Décrivez votre besoin (type d'intervention, urgence, accès au logement…)"
         />
       </label>
 
-      <p className="text-xs text-muted">
-        En envoyant ce formulaire, vous acceptez que vos données soient utilisées
-        pour traiter votre demande, conformément à notre{' '}
-        <a href="/mentions-legales/" className="font-medium text-brand-600 hover:underline">
-          politique RGPD
+      <p className="text-xs leading-relaxed text-muted">
+        En envoyant ce formulaire, vous acceptez que vos nom, téléphone et
+        message soient utilisés pour traiter votre demande. Ces données ne
+        sont ni cédées ni commercialisées. Détails et vos droits dans nos{' '}
+        <a
+          href="/mentions-legales/"
+          className="font-medium text-brand-600 hover:underline"
+        >
+          mentions légales &amp; RGPD
         </a>.
       </p>
 
