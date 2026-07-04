@@ -47,8 +47,8 @@ export function Hero({ site, contact }: Props) {
               <dd className="mt-0.5 text-xs uppercase tracking-wider text-muted">Disponible</dd>
             </div>
             <div className="rounded-lg border border-border bg-surface px-3 py-3 sm:px-4 sm:py-4">
-              <dt className="text-xl font-bold text-ink sm:text-2xl">{site.response_minutes} min</dt>
-              <dd className="mt-0.5 text-xs uppercase tracking-wider text-muted">Délai indicatif</dd>
+              <dt className="text-xl font-bold text-ink sm:text-2xl">Rapide</dt>
+              <dd className="mt-0.5 text-xs uppercase tracking-wider text-muted">Intervention</dd>
             </div>
           </dl>
         </div>

@@ -20,7 +20,7 @@ export function ZoneSection({ zone, contact }: Props) {
 
           <p className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-50 px-3 py-2 text-sm text-brand-700">
             <Icon name="clock" className="h-4 w-4" />
-            Délai indicatif&nbsp;:&nbsp;<span className="font-semibold">{zone.delai_intervention}</span>
+            <span className="font-semibold capitalize">{zone.delai_intervention}</span>
           </p>
 
           <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:gap-3">

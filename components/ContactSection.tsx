@@ -55,7 +55,7 @@ export function ContactSection({ contact, site }: Props) {
             Formulaire de contact
           </h3>
           <p className="mt-1 text-sm text-muted">
-            Réponse sous 15 minutes en journée. Pour une urgence, appelez directement.
+            Réponse rapide en journée. Pour une urgence, appelez directement.
           </p>
           <div className="mt-4 sm:mt-5">
             <ContactForm />

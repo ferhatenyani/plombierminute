@@ -31,7 +31,15 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: site.site_title }],
     creator: site.site_title,
     publisher: site.site_title,
-    icons: { icon: '/favicon.ico' },
+    icons: {
+      icon: [
+        { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon-96.png', sizes: '96x96', type: 'image/png' },
+        { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      ],
+      apple: '/icon-192.png',
+      shortcut: '/favicon-96.png',
+    },
     alternates: { canonical: '/' },
     openGraph: {
       type: 'website',
@@ -79,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@type': 'Plumber',
     '@id': `${site.site_url}/#business`,
     name: site.site_title,
-    alternateName: 'Plombier Minute',
+    alternateName: 'BTP France',
     description: site.seo_description,
     image: `${site.site_url}${site.hero_image}`,
     url: site.site_url,

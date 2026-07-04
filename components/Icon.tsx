@@ -5,7 +5,7 @@ type IconName =
   | 'drop' | 'pipe' | 'flame' | 'toilet' | 'shower' | 'sink'
   | 'bolt' | 'clock' | 'shield' | 'award'
   | 'phone' | 'arrow-right' | 'check' | 'star' | 'map-pin' | 'mail'
-  | 'menu' | 'close' | 'whatsapp';
+  | 'menu' | 'close' | 'whatsapp' | 'chevron-down' | 'clipboard';
 
 type Props = { name?: IconName | string; className?: string; 'aria-hidden'?: boolean };
 
@@ -90,6 +90,14 @@ const paths: Record<string, React.ReactNode> = {
     <>
       <path d="M3 21l1.7-4.6A8 8 0 1112 20a8 8 0 01-4.4-1.3L3 21z" />
       <path d="M9 9c0 4 2 6 6 6l1.5-1.5-2-1-1 .8c-1-.4-1.9-1.3-2.3-2.3l.8-1-1-2L9 9z" />
+    </>
+  ),
+  'chevron-down': <path d="M6 9l6 6 6-6" />,
+  clipboard: (
+    <>
+      <rect x="6" y="4" width="12" height="17" rx="2" />
+      <path d="M9 4h6v3H9z" />
+      <path d="M9 12h6M9 16h4" />
     </>
   ),
 };

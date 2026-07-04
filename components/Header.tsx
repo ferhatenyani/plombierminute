@@ -23,7 +23,7 @@ export function Header({ site, phoneHref, phoneLabel }: Props) {
         <div className="container-pm flex items-center justify-between gap-3 py-1.5 text-xs sm:text-sm">
           <span className="flex items-center gap-2 font-medium">
             <span className="pulse-dot" aria-hidden />
-            {site.emergency_label} · intervention en {site.response_minutes} min
+            {site.emergency_label} · {site.response_minutes}
           </span>
           <a
             href={phoneHref}

@@ -8,8 +8,8 @@ telephone_editeur: "[À REMPLIR : numéro de téléphone]"
 hebergeur: "Netlify, Inc."
 adresse_hebergeur: "44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis"
 telephone_hebergeur: "+1 415 691 2537"
-seo_title: "Mentions légales — PlombierMinute"
-seo_description: "Mentions légales du site PlombierMinute : éditeur, hébergeur, et politique de traitement des données personnelles (RGPD)."
+seo_title: "Mentions légales — BTP France"
+seo_description: "Mentions légales du site BTP France : éditeur, hébergeur, et politique de traitement des données personnelles (RGPD)."
 ---
 
 ## Éditeur du site

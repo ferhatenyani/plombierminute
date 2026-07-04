@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Icon } from './Icon';
+import { SelectDemande } from './SelectDemande';
 import { submitContact } from '@/lib/submitContact';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
@@ -91,22 +92,12 @@ export function ContactForm() {
         />
       </label>
 
-      <label className="block">
+      <div className="block">
         <span className="text-sm font-medium text-ink">Objet de votre demande</span>
-        <select
-          name="objet"
-          className="field field-select mt-2"
-          defaultValue=""
-          required
-        >
-          <option value="" disabled>Choisir un sujet…</option>
-          <option value="Urgence : fuite d'eau">Urgence : fuite d'eau</option>
-          <option value="Urgence : débouchage">Urgence : débouchage</option>
-          <option value="Panne de chauffe-eau">Panne de chauffe-eau</option>
-          <option value="Devis pour installation">Devis pour installation</option>
-          <option value="Autre demande">Autre demande</option>
-        </select>
-      </label>
+        <div className="mt-2">
+          <SelectDemande name="objet" required />
+        </div>
+      </div>
 
       <label className="block">
         <span className="text-sm font-medium text-ink">Votre message *</span>
@@ -147,7 +138,7 @@ export function ContactForm() {
             className="inline-flex items-center gap-2 rounded-md bg-success-500/10 px-3 py-2 text-sm text-success-600"
           >
             <Icon name="check" className="h-4 w-4" />
-            Message envoyé. Nous vous recontactons sous 15 minutes.
+            Message envoyé. Nous vous recontactons rapidement.
           </span>
         )}
         {status === 'error' && (

@@ -21,10 +21,10 @@ export async function submitContact(data: FormData): Promise<void> {
     const objet = payload.get('objet');
     payload.set(
       'subject',
-      objet ? `Nouvelle demande — ${objet}` : 'Nouvelle demande — PlombierMinute',
+      objet ? `Nouvelle demande — ${objet}` : 'Nouvelle demande — BTP France',
     );
   }
-  payload.set('from_name', 'Formulaire PlombierMinute');
+  payload.set('from_name', 'Formulaire BTP France');
 
   const res = await fetch(WEB3FORMS_ENDPOINT, {
     method: 'POST',
