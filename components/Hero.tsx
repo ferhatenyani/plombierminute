@@ -40,17 +40,6 @@ export function Hero({ site, contact }: Props) {
             </Link>
           </div>
 
-          {/* Trust strip — 2 legitimate promises only */}
-          <dl className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-4">
-            <div className="rounded-lg border border-border bg-surface px-3 py-3 sm:px-4 sm:py-4">
-              <dt className="text-xl font-bold text-ink sm:text-2xl">24/7</dt>
-              <dd className="mt-0.5 text-xs uppercase tracking-wider text-muted">Disponible</dd>
-            </div>
-            <div className="rounded-lg border border-border bg-surface px-3 py-3 sm:px-4 sm:py-4">
-              <dt className="text-xl font-bold text-ink sm:text-2xl">Rapide</dt>
-              <dd className="mt-0.5 text-xs uppercase tracking-wider text-muted">Intervention</dd>
-            </div>
-          </dl>
         </div>
 
         <div className="lg:col-span-5">

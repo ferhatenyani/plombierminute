@@ -80,18 +80,6 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="block">
-        <span className="text-sm font-medium text-ink">E-mail *</span>
-        <input
-          required
-          name="email"
-          type="email"
-          autoComplete="email"
-          className="field mt-2"
-          placeholder="jean.dupont@exemple.fr"
-        />
-      </label>
-
       <div className="block">
         <span className="text-sm font-medium text-ink">Objet de votre demande</span>
         <div className="mt-2">
@@ -128,7 +116,7 @@ export function ContactForm() {
             'Envoi en cours…'
           ) : (
             <>
-              <Icon name="mail" className="h-5 w-5" /> Envoyer ma demande
+              <Icon name="phone" className="h-5 w-5" /> Envoyer ma demande
             </>
           )}
         </button>

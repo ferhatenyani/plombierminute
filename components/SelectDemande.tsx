@@ -42,7 +42,7 @@ const OPTIONS: Option[] = [
     value: 'Autre demande',
     label: 'Autre demande',
     hint: 'Question, conseil, autre besoin',
-    icon: 'mail',
+    icon: 'clipboard',
   },
 ];
 

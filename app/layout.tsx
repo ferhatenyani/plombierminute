@@ -92,7 +92,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     image: `${site.site_url}${site.hero_image}`,
     url: site.site_url,
     telephone: contact.telephone,
-    email: contact.email,
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',

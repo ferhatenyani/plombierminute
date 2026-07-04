@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Site, Contact, Zone } from '@/lib/content';
 import { Icon } from './Icon';
-import { telHref, mailHref } from '@/lib/content';
+import { telHref } from '@/lib/content';
 
 type Props = { site: Site; contact: Contact; zone: Zone };
 
@@ -55,10 +55,6 @@ export function Footer({ site, contact, zone }: Props) {
             <li className="flex items-start gap-2">
               <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
               <a href={phoneHref} className="hover:text-brand-600">{contact.telephone}</a>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
-              <a href={mailHref(contact.email)} className="break-all hover:text-brand-600">{contact.email}</a>
             </li>
             <li className="flex items-start gap-2">
               <Icon name="clock" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />

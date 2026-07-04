@@ -1,5 +1,5 @@
 import type { Contact, Site } from '@/lib/content';
-import { telHref, mailHref } from '@/lib/content';
+import { telHref } from '@/lib/content';
 import { Icon } from './Icon';
 import { ContactForm } from './ContactForm';
 
@@ -34,12 +34,6 @@ export function ContactSection({ contact, site }: Props) {
               label="Téléphone"
               value={contact.telephone}
               href={phoneHref}
-            />
-            <ContactRow
-              icon="mail"
-              label="E-mail"
-              value={contact.email}
-              href={mailHref(contact.email)}
             />
             <ContactRow
               icon="map-pin"

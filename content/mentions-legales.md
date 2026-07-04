@@ -20,8 +20,8 @@ sous le numéro SIRET **[À REMPLIR : SIRET]**.
 
 ## Responsable de la publication
 
-**[À REMPLIR : Nom du responsable de publication]** — joignable à
-l'adresse **[À REMPLIR : email]**.
+**[À REMPLIR : Nom du responsable de publication]** — joignable via le
+[formulaire de contact](/#contact) ou par téléphone.
 
 ## Hébergement
 
@@ -54,7 +54,7 @@ uniquement les informations strictement nécessaires au traitement de
 votre demande :
 
 - **Nom**, pour vous identifier ;
-- **Adresse e-mail** et **numéro de téléphone**, pour vous recontacter ;
+- **Numéro de téléphone**, pour vous recontacter ;
 - **Contenu de votre message**, pour comprendre votre besoin.
 
 ### Finalité
@@ -77,8 +77,8 @@ Conformément au Règlement Général sur la Protection des Données (RGPD)
 et à la loi « Informatique et Libertés », vous disposez d'un droit
 d'**accès, de rectification, d'opposition, de limitation et de
 suppression** de vos données. Pour exercer ces droits, contactez-nous
-par e-mail à **[À REMPLIR : email]** en précisant l'objet « RGPD » et
-en joignant un justificatif d'identité.
+via notre [formulaire de contact](/#contact) ou par téléphone en
+précisant l'objet « RGPD » et en joignant un justificatif d'identité.
 
 Vous disposez également du droit d'introduire une réclamation auprès
 de la **CNIL** (`www.cnil.fr`).

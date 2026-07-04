@@ -117,7 +117,6 @@ export default function MentionsLegalesPage() {
               <SummaryRow label="Éditeur" value={m.editeur} />
               <SummaryRow label="Responsable de publication" value={m.responsable_publication} />
               <SummaryRow label="Adresse" value={m.adresse_editeur} />
-              <SummaryRow label="E-mail" value={m.email_editeur} />
               <SummaryRow label="Téléphone" value={m.telephone_editeur} />
               <SummaryRow label="Hébergeur" value={`${m.hebergeur} — ${m.adresse_hebergeur}`} />
             </dl>
